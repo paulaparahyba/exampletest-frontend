@@ -41,7 +41,7 @@ export class PersonUpdateComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id') ?? '';
     this.personPhoneService.readById(id).subscribe(personPhoneResponse =>
-      this.personPhoneResponse = personPhoneResponse)
+      this.personPhoneResponse.data.personPhonesObject = personPhoneResponse.data.personPhonesObject)
 
     this.personPhoneDto = this.personPhoneResponse.data.personPhonesObject[0]
     this.personPhoneRequest.Dto = this.personPhoneDto
