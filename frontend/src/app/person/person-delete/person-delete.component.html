@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-card-title>
+        Excluir telefone
+    </mat-card-title>
+</mat-card>
+<form>
+    <mat-form-field>
+        <input matInput placeholder="Telefone" disabled [value]="personPhoneRequest.Dto.PhoneNumber" name="PhoneNumber">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Tipo" disabled [value]="personPhoneRequest.Dto.PhoneNumberTypeId" name="PhoneNumberTypeId">
+    </mat-form-field>
+</form>
+<button mat-raised-button (click)="deletePersonPhone()">Salvar</button>
+<button mat-raised-button (click)="cancel()">Cancelar</button>

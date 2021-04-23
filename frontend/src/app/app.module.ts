@@ -18,7 +18,9 @@ import { PersonCreateComponent } from './person/person-create/person-create.comp
 import { FormsModule  } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatCardHeader } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { PersonUpdateComponent } from './person/person-update/person-update.component';
+import { PersonDeleteComponent } from './person/person-delete/person-delete.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { MatCardHeader } from '@angular/material/card';
     HeaderComponent,
     PersonComponent,
     PersonReadComponent,
-    PersonCreateComponent
+    PersonCreateComponent,
+    PersonUpdateComponent,
+    PersonDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,7 @@ import { MatCardHeader } from '@angular/material/card';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardHeader
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
