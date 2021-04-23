@@ -24,7 +24,7 @@ export class PersonService {
   }
 
   create(personPhone: PersonPhoneRequest): Observable<PersonPhoneResponse> {
-    return this.http.post<PersonPhoneResponse>(this.baseUrl + '/create', personPhone).pipe(
+    return this.http.post<PersonPhoneResponse>(this.baseUrl + '/Create', personPhone).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
     )
@@ -36,7 +36,7 @@ export class PersonService {
   }
 
   edit(personPhone: PersonPhoneRequest): Observable<PersonPhoneResponse> {
-    const url = `${this.baseUrl}/edit`
+    const url = `${this.baseUrl}/Edit`
     return this.http.put<PersonPhoneResponse>(url, personPhone).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
@@ -59,7 +59,7 @@ export class PersonService {
   } 
 
   delete(id: string): Observable<PersonPhoneResponse> {
-    const url = `${this.baseUrl}/delete/${id}`
+    const url = `${this.baseUrl}/Delete/${id}`
     return this.http.delete<PersonPhoneResponse>(url).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))

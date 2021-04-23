@@ -19,4 +19,8 @@ export class PersonComponent implements OnInit {
   navigateToPersonPhoneCreate(): void {
     this.router.navigate(['personPhone/create'])
   }
+
+  navigateToPersonPhone(): void {
+    this.router.navigate(['personPhone/all'])
+  }
 }

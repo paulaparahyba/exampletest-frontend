@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PersonPhoneRequest } from '../person.request';
 import { PersonService } from '../person.service';
 import { PersonPhone } from '../personPhone';
-import { PersonPhoneResponse } from '../personPhoneResponse';
+import { DataObject, PersonPhoneResponse } from '../personPhoneResponse';
 
 @Component({
   selector: 'app-person-update',
@@ -11,10 +11,14 @@ import { PersonPhoneResponse } from '../personPhoneResponse';
   styleUrls: ['./person-update.component.css']
 })
 export class PersonUpdateComponent implements OnInit {
-  personPhoneResponse: PersonPhoneResponse = {
+  dataResponse: DataObject = {
     personPhonesObject: [],
     success: true,
     errors: []
+  }
+  
+  personPhoneResponse: PersonPhoneResponse = {
+    data: this.dataResponse
   }
 
   personPhoneDto: PersonPhone = {
@@ -39,7 +43,7 @@ export class PersonUpdateComponent implements OnInit {
     this.personPhoneService.readById(id).subscribe(personPhoneResponse =>
       this.personPhoneResponse = personPhoneResponse)
 
-    this.personPhoneDto = this.personPhoneResponse.personPhonesObject[0]
+    this.personPhoneDto = this.personPhoneResponse.data.personPhonesObject[0]
     this.personPhoneRequest.Dto = this.personPhoneDto
   }
 
